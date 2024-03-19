@@ -16,10 +16,9 @@ function App() {
         return [...prevValues, Todo];
       });
         setTodo("")
-        console.log(toDoList[0]);
     }
 
-
+  
 
     const getList = toDoList.map(toDoItem => <li key={toDoItem}>{toDoItem}</li>)
  
