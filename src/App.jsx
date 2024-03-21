@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import './Style/Todo.css'
+import './Style/Todo.css';
+import InputArea from "./Components/InputArea";
 function App() {
 
     let [Todo, setTodo] = useState("")
@@ -29,19 +30,14 @@ function App() {
     }
   
 
-    const getList = toDoList.map((toDoItem, index) => <li key={index} onClick={() => deleteList(index)}> { toDoItem} </li>)
+  const getList = toDoList.map((toDoItem, index) => <li key={index} onClick={() => deleteList(index)}> { toDoItem} </li>)
  
   return ( 
     <div className="container">
       <div className="heading">
         <h1>To-Do List</h1>
       </div>
-      <div className="form">
-        <input type="text" onChange={handleChange} value={Todo}/>
-        <button onClick={handleSubmit}>
-          <span>Add</span>
-        </button>
-      </div>
+      <InputArea eventChange={handleChange} toDoValue={Todo} addList={handleSubmit}/>
       <div>
         <ul>
           {getList}
