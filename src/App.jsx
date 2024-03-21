@@ -29,8 +29,7 @@ function App() {
     }
   
 
-    const getList = toDoList.map((toDoItem, index) =>
-       <li key={index} id={index}  onClick={() => deleteList(index)}> { toDoItem} </li>)
+    const getList = toDoList.map((toDoItem, index) => <li key={index} onClick={() => deleteList(index)}> { toDoItem} </li>)
  
   return ( 
     <div className="container">
